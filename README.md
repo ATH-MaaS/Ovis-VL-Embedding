@@ -12,15 +12,19 @@
 
 Ovis-VL-Embedding is a vision-language embedding model developed by the Alibaba ATH-MaaS team. It maps text and image modalities into a unified representation space, enabling high-quality cross-modal retrieval and understanding.
 
+The latest release, **Ovis-VL-Embedding-v0.5**, has been submitted to the [MMEB](https://huggingface.co/spaces/TIGER-Lab/MMEB) official leaderboard.
+
 The technical report will be released in the near future. Stay tuned!
 
 ## Release
+- [26/08/21] 🔥 **Ovis-VL-Embedding-v0.5** released and submitted to the [MMEB](https://huggingface.co/spaces/TIGER-Lab/MMEB) official leaderboard.
 - [26/08/19] 🔥 Announcing Ovis-VL-Embedding, a vision-language embedding model for text and image. The technical report is coming soon.
 
 ## Model
 
 | Model | Parameters | Supported Modalities | Tech Report |
 |:------|:----------:|:--------------------:|:-------------:|
+| Ovis-VL-Embedding-v0.5 | - | Text / Image | [MMEB Leaderboard](https://huggingface.co/spaces/TIGER-Lab/MMEB) |
 | Ovis-VL-Embedding | - | Text / Image | Coming soon |
 
 ## Related Projects
