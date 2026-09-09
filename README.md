@@ -10,20 +10,20 @@
 
 ## Introduction
 
-Ovis-VL-Embedding is a vision-language embedding model developed by the Alibaba ATH-MaaS team. It maps text and image modalities into a unified representation space, enabling high-quality cross-modal retrieval and understanding.
+Ovis-VL-Embedding is a vision-language embedding model developed by the Alibaba ATH-MaaS team. It maps text, image, and video modalities into a unified representation space, enabling high-quality cross-modal retrieval and understanding. Audio tracks within videos are not processed.
 
 **Ovis-VL-Embedding-9B** achieves leading performance on the [MMEB](https://huggingface.co/spaces/TIGER-Lab/MMEB) official leaderboard.
 
 ## Release
 - [26/09/09] 🔥 **Ovis-VL-Embedding-9B** released. Check out the [MMEB Leaderboard](https://huggingface.co/spaces/TIGER-Lab/MMEB) for results.
 - [26/08/21] 🔥 **Ovis-VL-Embedding-v0.5** released and submitted to the [MMEB](https://huggingface.co/spaces/TIGER-Lab/MMEB) official leaderboard.
-- [26/08/19] 🔥 Announcing Ovis-VL-Embedding, a vision-language embedding model for text and image.
+- [26/08/19] 🔥 Announcing Ovis-VL-Embedding, a vision-language embedding model for text, image, and video.
 
 ## Model
 
 | Model | Parameters | Supported Modalities | Tech Report | MMEB Leaderboard |
 |:------|:----------:|:--------------------:|:-------------:|:----------------:|
-| Ovis-VL-Embedding-9B | 9B | Text / Image | Coming soon | [Leaderboard](https://huggingface.co/spaces/TIGER-Lab/MMEB) |
+| Ovis-VL-Embedding-9B | 9B | Text / Image / Video | Coming soon | [Leaderboard](https://huggingface.co/spaces/TIGER-Lab/MMEB) |
 
 ## Related Projects
 - [**Ovis-Omni-Embedding**](https://github.com/ATH-MaaS/Ovis-Omni-Embedding): An omni-modal embedding model for text, image, video, and audio.
