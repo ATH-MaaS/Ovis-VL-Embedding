@@ -21,17 +21,6 @@ We also release **Ovis-VL-Embedding-2B**, a compact variant initialized from **Q
 
 > Our technical report is now available on arXiv: [**arXiv:2609.25165**](https://arxiv.org/pdf/2609.25165). Model pages are also live on Hugging Face: [**ATH-MaaS/Ovis-VL-Embedding-9B**](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-9B) and [**ATH-MaaS/Ovis-VL-Embedding-2B**](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-2B). Model weights are not open-sourced yet and will be released in the near future. Stay tuned!
 
-## Model Highlights
-
-- **Unified multimodal retrieval:** Queries and candidates may contain text, visual inputs, or interleaved text-image and text-video combinations.
-- **One shared embedding interface:** All supported inputs are represented through last-token pooling and compared in the same cosine-similarity space.
-- **Dynamic-resolution visual processing:** The native vision encoder handles images and sampled video frames at flexible resolutions while preserving spatial and temporal positions.
-- **Difficulty-aware contrastive learning:** Focal embedding loss emphasizes unresolved queries with competitive negatives.
-- **Fine-grained embedding distillation:** Teacher similarity distributions preserve relative relevance across both positive and negative candidates.
-- **Homogeneous-source finetuning:** Task-consistent micro-batches provide informative in-batch negatives and reduce shortcuts based on modality or data format.
-- **Efficient hybrid backbone:** The Qwen3.5 backbone repeats three Gated DeltaNet layers followed by one gated full-attention layer, combining efficient long-context processing with periodic global token interaction.
-- **Strong temporal scaling:** Compared with the 2B variant, the 9B model gains most strongly on video question answering, video retrieval, and video moment retrieval.
-
 ## Performance
 
 ### MMEB-v2
