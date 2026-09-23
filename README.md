@@ -5,28 +5,66 @@
 <br>
 
 <p align="center">
+  <a href="https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-9B"><img src="https://img.shields.io/badge/🤗_Model_Page-Ovis--VL--Embedding--9B-yellow" alt="model page 9B"></a>
+  <a href="https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-2B"><img src="https://img.shields.io/badge/🤗_Model_Page-Ovis--VL--Embedding--2B-yellow" alt="model page 2B"></a>
   <img src="https://img.shields.io/badge/📖_Technical_Report-Coming_Soon-b31b1b.svg" alt="technical report">
 </p>
 
 ## Introduction
 
-Ovis-VL-Embedding is a vision-language embedding model developed by the Alibaba ATH-MaaS team. It maps text, image, and video modalities into a unified representation space, enabling high-quality cross-modal retrieval and understanding. Audio tracks within videos are not processed.
+Ovis-VL-Embedding is a vision-language embedding model developed by the Alibaba ATH-MaaS team. It maps text, image, visual document, and video modalities into a unified representation space, enabling high-quality cross-modal retrieval and understanding.
 
-**Ovis-VL-Embedding-9B** achieves leading performance on the [MMEB](https://huggingface.co/spaces/TIGER-Lab/MMEB) official leaderboard.
+**Ovis-VL-Embedding-9B** achieves leading performance on the [MMEB](https://huggingface.co/spaces/TIGER-Lab/MMEB) official leaderboard. It is a high-capacity vision-language embedding model for text, images, visual documents, video, and interleaved multimodal inputs, and is initialized from **Qwen3.5-9B**. It retains the native text and vision encoders together with the shared multimodal language backbone, removes the language-modeling head, and directly uses the final-layer hidden state at the last non-padding token as the retrieval embedding. No modality-specific projection head is added.
+
+We also release **Ovis-VL-Embedding-2B**, a compact variant initialized from **Qwen3.5-2B**, which delivers strong text, image, document, and video retrieval under constrained serving budgets.
+
+> Model pages are now available on Hugging Face: [**ATH-MaaS/Ovis-VL-Embedding-9B**](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-9B) and [**ATH-MaaS/Ovis-VL-Embedding-2B**](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-2B). Model weights are not open-sourced yet and will be released in the near future. Stay tuned!
+
+## Model Highlights
+
+- **Unified multimodal retrieval:** Queries and candidates may contain text, visual inputs, or interleaved text-image and text-video combinations.
+- **One shared embedding interface:** All supported inputs are represented through last-token pooling and compared in the same cosine-similarity space.
+- **Dynamic-resolution visual processing:** The native vision encoder handles images and sampled video frames at flexible resolutions while preserving spatial and temporal positions.
+- **Difficulty-aware contrastive learning:** Focal embedding loss emphasizes unresolved queries with competitive negatives.
+- **Fine-grained embedding distillation:** Teacher similarity distributions preserve relative relevance across both positive and negative candidates.
+- **Homogeneous-source finetuning:** Task-consistent micro-batches provide informative in-batch negatives and reduce shortcuts based on modality or data format.
+- **Efficient hybrid backbone:** The Qwen3.5 backbone repeats three Gated DeltaNet layers followed by one gated full-attention layer, combining efficient long-context processing with periodic global token interaction.
+- **Strong temporal scaling:** Compared with the 2B variant, the 9B model gains most strongly on video question answering, video retrieval, and video moment retrieval.
+
+## Performance
+
+### MMEB-v2
+
+MMEB-v2 evaluates vision-language embeddings over **78 datasets** spanning image, video, and visual-document tasks.
+
+| Group | Ovis-VL-Embedding-9B | Ovis-VL-Embedding-2B | Best compared baseline (9B) | Best compared baseline (2B) |
+|:------|:--------------------:|:--------------------:|:---------------------------:|:---------------------------:|
+| Image | **83.96** | 80.62 | 81.86 (+2.10) | 77.41 (+3.21) |
+| Video | **72.90** | 67.12 | 75.95 (-3.05) | 68.84 (-1.72) |
+| Visual document | **83.06** | 80.47 | 82.38 (+0.68) | 79.86 (+0.61) |
+| **All 78 datasets** | **81.13** | **77.46** | 80.09 (**+1.04**) | 75.42 (**+2.04**) |
+
+Ovis-VL-Embedding-9B achieves **81.13 overall**, outperforming the strongest compared baseline by **1.04 points**. Ovis-VL-Embedding-2B achieves **77.46 overall**, outperforming the strongest compared baseline in its scale group by **2.04 points**.
+
+Both models rank first on all four image sub-tasks, video classification, video moment retrieval, the visual-document aggregate, and ViDoRe-V1. Scaling from 2B to 9B improves the overall score by **3.67 points**, with the largest gains on video question answering (+7.64), video moment retrieval (+7.23), and video retrieval (+5.74).
 
 ## Release
+- [26/09/23] 🔥 The model pages of **Ovis-VL-Embedding-9B** and **Ovis-VL-Embedding-2B** are now live on Hugging Face. Model weights will be open-sourced soon.
 - [26/09/09] 🔥 **Ovis-VL-Embedding-9B** released. Check out the [MMEB Leaderboard](https://huggingface.co/spaces/TIGER-Lab/MMEB) for results.
 - [26/08/21] 🔥 **Ovis-VL-Embedding-v0.5** released and submitted to the [MMEB](https://huggingface.co/spaces/TIGER-Lab/MMEB) official leaderboard.
 - [26/08/19] 🔥 Announcing Ovis-VL-Embedding, a vision-language embedding model for text, image, and video.
 
 ## Model
 
-| Model | Parameters | Supported Modalities | Tech Report | MMEB Leaderboard |
-|:------|:----------:|:--------------------:|:-------------:|:----------------:|
-| Ovis-VL-Embedding-9B | 9B | Text / Image / Video | Coming soon | [Leaderboard](https://huggingface.co/spaces/TIGER-Lab/MMEB) |
+| Model | Parameters | Supported Modalities | Embedding Dim | Model Page | Model Weights | Tech Report |
+|:------|:----------:|:--------------------:|:-------------:|:----------:|:-------------:|:-----------:|
+| Ovis-VL-Embedding-9B | 9B | Text / Image / Visual Document / Video | 4096 | [🤗 HF](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-9B) | Coming soon | Coming soon |
+| Ovis-VL-Embedding-2B | 2B | Text / Image / Visual Document / Video | 2048 | [🤗 HF](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-2B) | Coming soon | Coming soon |
+
+> **Note:** Ovis-VL-Embedding does not natively support audio input. Audio tracks within videos are not processed. For audio and general omni-modal retrieval, please use [**Ovis-Omni-Embedding-3B**](https://github.com/ATH-MaaS/Ovis-Omni-Embedding).
 
 ## Related Projects
-- [**Ovis-Omni-Embedding**](https://github.com/ATH-MaaS/Ovis-Omni-Embedding): An omni-modal embedding model for text, image, video, and audio.
+- [**Ovis-Omni-Embedding**](https://github.com/ATH-MaaS/Ovis-Omni-Embedding): An omni-modal embedding model for text, image, visual document, video, and audio.
 
 ## Citation
 The technical report is forthcoming. Citation information will be provided upon its release.
