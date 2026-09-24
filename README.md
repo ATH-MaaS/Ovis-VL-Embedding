@@ -48,8 +48,8 @@ Both models rank first on all four image sub-tasks, video classification, video 
 
 | Model | Parameters | Supported Modalities | Embedding Dim | Model Page | Tech Report |
 |:------|:----------:|:--------------------:|:-------------:|:----------:|:-----------:|
-| Ovis-VL-Embedding-9B | 9B | Text / Image / Visual Document / Video | 4096 | [🤗 HF](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-9B) *(weights coming soon)* | [📖 arXiv](https://arxiv.org/pdf/2609.25165) |
-| Ovis-VL-Embedding-2B | 2B | Text / Image / Visual Document / Video | 2048 | [🤗 HF](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-2B) *(weights coming soon)* | [📖 arXiv](https://arxiv.org/pdf/2609.25165) |
+| Ovis-VL-Embedding-9B | 9B | Text / Image / Visual Document / Video | 4096 | [🤗 HF](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-9B) | [📖 arXiv](https://arxiv.org/pdf/2609.25165) |
+| Ovis-VL-Embedding-2B | 2B | Text / Image / Visual Document / Video | 2048 | [🤗 HF](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-2B)  | [📖 arXiv](https://arxiv.org/pdf/2609.25165) |
 
 > **Note:** Ovis-VL-Embedding does not natively support audio input. Audio tracks within videos are not processed. For audio and general omni-modal retrieval, please use [**Ovis-Omni-Embedding-3B**](https://github.com/ATH-MaaS/Ovis-Omni-Embedding).
 
