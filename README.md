@@ -56,8 +56,20 @@ Both models rank first on all four image sub-tasks, video classification, video 
 ## Related Projects
 - [**Ovis-Omni-Embedding**](https://github.com/ATH-MaaS/Ovis-Omni-Embedding): An omni-modal embedding model for text, image, visual document, video, and audio.
 
+
 ## Citation
-If you find this work useful, please consider citing our technical report: [arXiv:2609.25165](https://arxiv.org/pdf/2609.25165).
+
+If you find our embedding models useful, please consider citing our technical report:
+
+```bibtex
+@article{ovisembedding2026,
+  title   = {Ovis-Embedding: Pushing the Frontiers of Universal Omni-Modal Embeddings},
+  author  = {{Ovis-Embedding Team}},
+  journal = {arXiv preprint arXiv:2609.25165},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2609.25165}
+}
+```
 
 ## License
 This project is licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt) (SPDX-License-Identifier: Apache-2.0).
