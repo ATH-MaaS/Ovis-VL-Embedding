@@ -19,7 +19,7 @@ Ovis-VL-Embedding is a vision-language embedding model developed by the Alibaba 
 
 We also release **Ovis-VL-Embedding-2B**, a compact variant initialized from **Qwen3.5-2B**, which delivers strong text, image, document, and video retrieval under constrained serving budgets.
 
-> Our technical report is now available on arXiv: [**arXiv:2609.25165**](https://arxiv.org/pdf/2609.25165). Model pages are also live on Hugging Face: [**ATH-MaaS/Ovis-VL-Embedding-9B**](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-9B) and [**ATH-MaaS/Ovis-VL-Embedding-2B**](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-2B). Model weights are not open-sourced yet and will be released in the near future. Stay tuned!
+> Our technical report is now available on arXiv: [**arXiv:2609.25165**](https://arxiv.org/pdf/2609.25165). Model pages are also live on Hugging Face: [**ATH-MaaS/Ovis-VL-Embedding-9B**](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-9B) and [**ATH-MaaS/Ovis-VL-Embedding-2B**](https://huggingface.co/ATH-MaaS/Ovis-VL-Embedding-2B). Model weights have been open-sourced!
 
 ## Performance
 
